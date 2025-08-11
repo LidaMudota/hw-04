@@ -1,24 +1,16 @@
-# hw-04
+# Извлечение мета‑тегов
 
-CLI-скрипт для извлечения `title`, `meta[name=description]` и `meta[name=keywords]` из HTML.
+Скрипт `extract_meta.php` удаляет из `input.html` теги `<title>`,
+`<meta name="description">` и `<meta name="keywords">`. Значения
+тегов сохраняются в `meta.json`, а очищённый HTML в `clean.html`.
 
-## Использование
+## Запуск
 
 ```sh
-php extract.php sample.html
-# или
-cat sample.html | php extract.php
+php extract_meta.php
 ```
 
-## Выход
+После выполнения появятся файлы:
 
-JSON вида:
-
-```json
-{"title":"...","description":"...","keywords":"..."}
-```
-
-## Коды выхода
-
-* `0` — успех;
-* `2` — нет ввода или файл недоступен.
+* `meta.json` — извлечённые значения мета‑тегов в формате JSON;
+* `clean.html` — исходный HTML без удалённых тегов.
